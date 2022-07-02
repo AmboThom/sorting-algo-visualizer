@@ -10,18 +10,20 @@ const Visualizer = () => {
     
     const generateArray = () => {
         let array = [];
-        for (let i = 0; i < 20; i++) {
+        for (let i = 0; i < 100; i++) {
             array.push(randomIntFromInterval(5, 200));
         }
         setArray(array);
     }
 
     return (
-        <div>
+        <div className="absolute left-[100px]">
         {array && array.map((value, idx) => {
             return (
-                <div className="array-bar" key={idx}>
-                    {value}
+                <div className="w-[2px] inline-block mx-px bg-blue-600"
+                 key={idx}
+                 style={{height: `${value}px`}}>
+                    
                 </div>
             );
         })}
